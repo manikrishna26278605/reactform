@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, FormGroup, FormControl, label } from "react-bootstrap";
+import { Button, FormGroup, FormControl, label, ButtonToolbar, Navbar, Nav, Form } from "react-bootstrap";
 import "./Login.css";
 
 export default function Login(props) {
@@ -11,10 +11,24 @@ export default function Login(props) {
   }
 
   function handleSubmit(event) {
-    event.preventDefault();
+     event.preventDefault();
   }
 
   return (
+    <>
+    <Navbar bg="primary" variant="dark">
+    <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+    <Nav className="mr-auto">
+      <Nav.Link href="#home">Home</Nav.Link>
+      <Nav.Link href="#features">Features</Nav.Link>
+      <Nav.Link href="#pricing">Pricing</Nav.Link>
+    </Nav>
+    <Form inline>
+      <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+      <Button variant="outline-light">Search</Button>
+    </Form>
+  </Navbar>
+
     <div className="Login">
       <form onSubmit={handleSubmit}>
       <label className={'label-cls'} >Email</label>
@@ -34,10 +48,11 @@ export default function Login(props) {
             type="password"
           />
         </FormGroup>
-        <Button block bsSize="large" disabled={!validateForm()} type="submit">
-          Login
-        </Button>
+        <ButtonToolbar>
+         <Button variant="primary" className={ 'login-cls'} type={'submit'} > Login </Button>
+      </ButtonToolbar>
       </form>
     </div>
+    </>
   );
 }
