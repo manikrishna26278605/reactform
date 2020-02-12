@@ -1,0 +1,26 @@
+@media all and (min-width: 480px) {
+  .Login {
+    padding: 60px 0;
+  }
+
+  .Login form {
+    margin: 0 auto;
+    max-width: 320px;
+    
+  }
+}
+
+.label-cls{
+  float: left;
+  min-width: 21%;
+  text-align: left;
+}
+
+.Login {
+  
+  width: 30%;
+  margin: 0 auto;
+  background: aliceblue;
+  margin-top: 10%;
+}
+
